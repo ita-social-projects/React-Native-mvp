@@ -1,0 +1,12 @@
+import { Text, View } from 'react-native'
+import React, { Component } from 'react'
+
+export default class Welcome extends Component {
+  render() {
+    return (
+      <View>
+        <Text>Welcome</Text>
+      </View>
+    )
+  }
+}
