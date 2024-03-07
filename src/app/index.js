@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, Button } from "react-native";
 import * as Localization from "expo-localization";
 import { Link } from "expo-router";
@@ -21,6 +21,6 @@ const Home = () => {
       />
     </View>
   );
-}
+};
 
-export default Home
+export default Home;
