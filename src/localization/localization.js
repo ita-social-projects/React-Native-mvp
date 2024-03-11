@@ -1,11 +1,10 @@
 const translations = {
-    en : {
-        greeting: "Hello", 
-    },
+  en: {
+    greeting: 'Hello'
+  },
 
-    uk :{
-        greeting: "Вітаю!",
-    }
-
+  uk: {
+    greeting: 'Вітаю!'
+  }
 }
-export { translations };
+export { translations }
