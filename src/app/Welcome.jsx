@@ -1,11 +1,11 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 
-export default class AppMenu extends Component {
+export default class Welcome extends Component {
   render() {
     return (
       <View>
-        <Text>AppMenu</Text>
+        <Text>Welcome</Text>
       </View>
     )
   }
