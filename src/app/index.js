@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native'
 import { I18n } from 'i18n-js'
 import * as Localization from 'expo-localization'
 
-import { translations } from '~/localization/localization'
+import { translations } from '~/constants/localization'
 
 const Home = () => {
   let [locale, setLocale] = useState(Localization.locale)
