@@ -11,7 +11,8 @@ module.exports = {
     'plugin:react-native/all'
   ],
   parserOptions: {
-    parser: 'module:@babel/eslint-parser',
+    parser: '@babel/eslint-parser',
+    babelOptions: { configFile: './babel.config.js' },
     requireConfigFile: false,
     ecmaVersion: 2021,
     ecmaFeatures: { jsx: true },
