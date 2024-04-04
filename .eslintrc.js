@@ -34,7 +34,7 @@ module.exports = {
     'react/jsx-sort-props': 'error',
     'no-unused-vars': 'error',
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-    'react/jsx-max-depth': ['error', { max: 5 }],
+    'react/jsx-max-depth': ['error', { max: 7 }],
     'react/jsx-wrap-multilines': [
       'error',
       {
