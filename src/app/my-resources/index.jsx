@@ -1,6 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+//TODO leave only index.jsx for routing (render only one component)
+
+import { View, Text } from 'react-native'
 import { Button } from 'react-native-paper'
 import { Link } from 'expo-router'
+
+import { styles } from '~/app/my-resources/MyResources.styles'
 
 export default function MyResources() {
   return (
@@ -19,18 +23,3 @@ export default function MyResources() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  button: {
-    width: '100%'
-  },
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center'
-  },
-  text: {
-    fontSize: 24,
-    marginBottom: 16
-  }
-})

@@ -34,7 +34,7 @@ module.exports = {
     'react/jsx-sort-props': 'error',
     'no-unused-vars': 'error',
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-    'react/jsx-max-depth': ['error', { max: 7 }],
+    'react/jsx-max-depth': ['error', { max: 5 }],
     'react/jsx-wrap-multilines': [
       'error',
       {
@@ -47,10 +47,12 @@ module.exports = {
         prop: 'ignore'
       }
     ],
+    semi: 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
-    semi: 'off'
+    'react-native/sort-styles': 'off',
+    'react-native/no-color-literals': 'off'
   },
   overrides: [
     {
