@@ -2,7 +2,7 @@ import MaskedView from '@react-native-masked-view/masked-view'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Text } from 'react-native-paper'
 
-import { styles } from '~/components/gradient-text/GradientText.styles'
+import { styles } from '~/components/gradient-text/index.styles'
 
 const GradientText = ({
   variant,
