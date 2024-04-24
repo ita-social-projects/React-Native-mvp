@@ -45,6 +45,7 @@ const OnboardingScreen = () => {
       : setScreenIndex((prevState) => prevState - 1)
   }
 
+
   const swipes = Gesture.Simultaneous(
     Gesture.Fling().direction(Directions.LEFT).onEnd(onContinue),
     Gesture.Fling().direction(Directions.RIGHT).onEnd(onBack)
