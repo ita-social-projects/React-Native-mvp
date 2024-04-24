@@ -1,3 +1,5 @@
+//TODO create only index.jsx for routing (render only one component)
+
 import { View, Text, Button } from 'react-native'
 import { Link } from 'expo-router'
 
