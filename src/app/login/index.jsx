@@ -1,3 +1,1 @@
-import Login from '~/pages/login/index'
-
-export default Login
+export default from '~/pages/login/index'
