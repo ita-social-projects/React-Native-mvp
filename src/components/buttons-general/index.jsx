@@ -1,20 +1,30 @@
-import { Text, View, Pressable } from 'react-native'
+import { Text, View } from 'react-native'
+import { Button } from 'react-native-paper'
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons'
 
 import { styles } from '~/components/buttons-general/ButtonsGeneral.style'
-
 const ButtonsGeneral = () => {
   return (
     <>
       <View style={styles.buttonsRow}>
-        <Pressable
+        <Button
+          contentStyle={styles.buttonContent}
+          icon={() => (
+            <AntDesign
+              color='#fff'
+              name='arrowright'
+              size={20}
+              style={styles.icon}
+            />
+          )}
+          labelStyle={styles.buttonText}
+          mode='contained'
           onPress={() => router.replace('/signup')}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Get Started</Text>
-          <AntDesign color='#fff' name='arrowright' size={20} />
-        </Pressable>
+          <Text>Get Started</Text>
+        </Button>
       </View>
       <Text onPress={() => router.replace('/login')} style={styles.loginText}>
         Login
@@ -24,5 +34,3 @@ const ButtonsGeneral = () => {
 }
 
 export default ButtonsGeneral
-
-//TODO Create Get Started button via paper
