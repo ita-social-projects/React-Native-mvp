@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
   loginText: {
     color: colors.darkBlue,
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '700',
     marginTop: 20,
     textAlign: 'center'
   }

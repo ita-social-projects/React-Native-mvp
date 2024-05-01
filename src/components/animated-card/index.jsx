@@ -6,7 +6,7 @@ import Animated, {
   SlideInRight
 } from 'react-native-reanimated'
 
-import { styles } from '~/components/animated-card/AnimatedCard.styles'
+import { styles } from './AnimatedCard.styles'
 
 const AnimatedCard = ({ data }) => {
   return (

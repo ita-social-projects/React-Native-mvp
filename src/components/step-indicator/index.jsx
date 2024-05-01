@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import { onboardingSteps } from '~/constants/onboarding'
 
-import { styles } from '~/components/step-indicator/StepIndicator.styles'
+import { styles } from './StepIndicator.styles'
 
 const StepIndicator = ({ screenIndex }) => (
   <View style={styles.stepIndicatorContainer}>

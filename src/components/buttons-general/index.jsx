@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native'
-import { Button } from 'react-native-paper'
+import { View } from 'react-native'
+import { Button, Text } from 'react-native-paper'
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons'
 
-import { styles } from '~/components/buttons-general/ButtonsGeneral.style'
+import { styles } from './ButtonsGeneral.style'
+
 const ButtonsGeneral = () => {
   return (
     <>
@@ -18,16 +19,15 @@ const ButtonsGeneral = () => {
               style={styles.icon}
             />
           )}
-          labelStyle={styles.buttonText}
           mode='contained'
           onPress={() => router.replace('/signup')}
           style={styles.button}
         >
-          <Text>Get Started</Text>
+          <Text style={styles.buttonText}>Get Started</Text>
         </Button>
       </View>
       <Text onPress={() => router.replace('/login')} style={styles.loginText}>
-        Login
+        Log in
       </Text>
     </>
   )

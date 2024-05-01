@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
-import { Button } from 'react-native-paper'
+import { View } from 'react-native'
+import { Button, Text } from 'react-native-paper'
 import { Link } from 'expo-router'
 
-import { styles } from '~/pages/my-resources/MyResources.style'
+import { styles } from './MyResources.style'
 
 const MyResources = () => {
   return (

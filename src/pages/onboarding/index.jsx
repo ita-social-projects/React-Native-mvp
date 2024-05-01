@@ -13,7 +13,7 @@ import { StepIndicator, AnimatedCard, ButtonsGeneral } from '~/components'
 import { onboardingSteps } from '~/constants/onboarding'
 import Layout from '~/app/layout'
 
-import { styles } from '~/pages/onboarding/Onboarding.style'
+import { styles } from './Onboarding.style'
 
 const OnboardingScreen = () => {
   const [screenIndex, setScreenIndex] = useState(0)
