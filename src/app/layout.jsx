@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import { styles } from '~/app/styles'
+import { styles } from '~/pages/onboarding/Onboarding.style'
 
 const Layout = ({ children }) => {
   return (

@@ -15,13 +15,15 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'center',
-    padding: 8
+    padding: 3
+  },
+  buttonContent: {
+    flexDirection: 'row-reverse'
   },
   buttonText: {
     color: colors.offWhite,
     fontSize: 16,
-    fontWeight: '700',
-    marginRight: 10
+    fontWeight: '700'
   },
   buttonsRow: {
     alignItems: 'center',
@@ -32,7 +34,7 @@ export const styles = StyleSheet.create({
   loginText: {
     color: colors.darkBlue,
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '700',
     marginTop: 20,
     textAlign: 'center'
   }

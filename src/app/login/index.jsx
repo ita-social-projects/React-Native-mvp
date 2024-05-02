@@ -1,1 +1,1 @@
-export default from '~/pages/login/index'
+export { default } from '~/pages/login'

@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons'
 
 import GradientText from '~/components/gradient-text'
 
-import { styles } from '~/pages/login/index.styles'
+import { styles } from './Login.styles'
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false)
