@@ -21,7 +21,11 @@ const Login = () => {
     <View style={styles.root(screenHeight)}>
       <View style={styles.mainContent}>
         <View style={styles.headerContainer}>
-          <AntDesign name='arrowleft' size={25} style={styles.arrowBack} />
+          <View style={styles.arrowWrapper}>
+            <Link href='/'>
+              <AntDesign name='arrowleft' size={25} />
+            </Link>
+          </View>
           <Text variant='headlineSmall'>Log in</Text>
         </View>
         <View>
@@ -30,7 +34,7 @@ const Login = () => {
             text='Welcome back!'
             variant='headlineMedium'
           />
-          <Text variant='titleSmall'>
+          <Text style={styles.subtitle} variant='titleSmall'>
             Ready to continue your journey? Please enter your details.
           </Text>
         </View>
@@ -71,7 +75,7 @@ const Login = () => {
         </Button>
         <View style={styles.signUpBox}>
           <Text style={styles.signUpText}>Don&apos;t have an account?</Text>
-          <Link href='/'>
+          <Link href='/signup'>
             <Text variant='titleSmall'>Join us for free!</Text>
           </Link>
         </View>
