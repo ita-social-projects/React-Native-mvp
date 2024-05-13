@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-  arrowBack: {
-    height: 30,
-    marginRight: 20,
-    marginTop: 10,
-    width: 30
+  subtitle: {
+    color: '#465a64'
+  },
+  arrowWrapper: {
+    marginRight: 15
   },
   bottomContainer: {
     alignItems: 'center',
