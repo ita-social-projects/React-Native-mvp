@@ -2,30 +2,30 @@ import { StyleSheet } from 'react-native'
 
 const colors = {
   green: '#46995d',
-  grey: '#465a64'
+  grey: '#465a64',
 }
 
 export const styles = StyleSheet.create({
   wrapper: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   text: {
-    color: colors.green
+    color: colors.green,
   },
   descriptionText: {
-    color: colors.grey
+    color: colors.grey,
   },
   headlineSmall: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   headlineMedium: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333'
+    color: '#333',
   },
   titleSmall: {
     fontSize: 16,
-    color: '#444'
-  }
+    color: '#444',
+  },
 })
