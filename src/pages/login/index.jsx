@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import { View, Dimensions } from 'react-native'
-import { TextInput, Text, Button, Divider } from 'react-native-paper'
+import { TextInput, Button, Divider } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
 
 import GradientText from '~/components/gradient-text'
+import { PaperText } from '~/containers'
 
 import { styles } from './Login.styles'
 
@@ -26,7 +27,7 @@ const Login = () => {
               <AntDesign name='arrowleft' size={25} />
             </Link>
           </View>
-          <Text variant='headlineSmall'>Log in</Text>
+          <PaperText variant='headlineSmall'>Log in</PaperText>
         </View>
         <View>
           <GradientText
@@ -34,9 +35,9 @@ const Login = () => {
             text='Welcome back!'
             variant='headlineMedium'
           />
-          <Text style={styles.subtitle} variant='titleSmall'>
+          <PaperText style={styles.subtitle} variant='titleSmall'>
             Ready to continue your journey? Please enter your details.
-          </Text>
+          </PaperText>
         </View>
         <View>
           <TextInput
@@ -60,24 +61,29 @@ const Login = () => {
           />
         </View>
         <View style={styles.forgotPassword}>
-          <Link href='/'>
-            <Text variant='titleSmall'>Forgot your password?</Text>
+          <Link href='/signup'>
+            <PaperText variant='titleSmall'>Forgot your password?</PaperText>
           </Link>
         </View>
         <Button mode='contained' style={styles.loginButton}>
-          <Text style={styles.loginText}>Log in</Text>
+          <PaperText style={styles.loginText}>Log in</PaperText>
         </Button>
         <Divider bold />
       </View>
       <View style={styles.bottomContainer}>
         <Button mode='contained' style={styles.loginButton}>
-          <Text style={styles.loginText}>Login Google</Text>
+          <PaperText style={styles.loginText}>Login Google</PaperText>
         </Button>
         <View style={styles.signUpBox}>
-          <Text style={styles.signUpText}>Don&apos;t have an account?</Text>
-          <Link href='/signup'>
-            <Text variant='titleSmall'>Join us for free!</Text>
-          </Link>
+          <PaperText style={styles.signUpText}>
+            Don&apos;t have an account?
+          </PaperText>
+          <PaperText
+            onPress={() => router.replace('/signup')}
+            variant='titleSmall'
+          >
+            Join us for free!
+          </PaperText>
         </View>
       </View>
     </View>

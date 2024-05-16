@@ -1,70 +1,56 @@
-import { Text } from 'react-native-paper'
+import { PaperText } from '~/containers'
 import { screen1, screen2, screen3 } from '~/assets/screens'
-
-import { styles } from './Onboarding.styles'
 
 export const onboardingSteps = [
   {
+    key: 1,
     image: screen1,
     title: (
       <>
-        <Text style={styles.wrapper} variant='headlineSmall'>
-          The secret of getting{' '}
-        </Text>
-        <Text style={[styles.text, styles.wrapper]} variant='headlineSmall'>
-          ahead{' '}
-        </Text>
-        <Text style={styles.wrapper} variant='headlineSmall'>
-          is getting{' '}
-        </Text>
-        <Text style={[styles.text, styles.wrapper]} variant='headlineSmall'>
-          started
-        </Text>
+        <PaperText>The secret of getting </PaperText>{' '}
+        {/**by default [styles.wrapper, ...style] */}
+        <PaperText variant='title'>ahead </PaperText>
+        <PaperText>is getting </PaperText>
+        <PaperText variant='title'>started</PaperText>
       </>
     ),
     description: (
       <>
-        <Text style={styles.descriptionText}>Welcome to the </Text>
-        <Text style={[styles.descriptionText, styles.text]}>Space2Study </Text>
-        <Text style={styles.descriptionText}>learning app!</Text>
+        <PaperText variant='descriptionText'>Welcome to the </PaperText>
+        <PaperText variant='combineText'>Space2Study </PaperText>
+        <PaperText variant='descriptionText'>learning app!</PaperText>
       </>
     )
   },
   {
+    key: 2,
     image: screen2,
     title: (
       <>
-        <Text style={[styles.text, styles.wrapper]} variant='headlineSmall'>
-          Learn{' '}
-        </Text>
-        <Text style={styles.wrapper} variant='headlineSmall'>
-          from experts
-        </Text>
+        <PaperText variant='title'>Learn </PaperText>
+        <PaperText>from experts</PaperText>
       </>
     ),
     description: (
-      <Text style={styles.descriptionText}>
+      <PaperText variant='descriptionText'>
         Enjoy personalized lessons and easy communication with the right tutor
         for you.
-      </Text>
+      </PaperText>
     )
   },
   {
+    key: 3,
     image: screen3,
     title: (
       <>
-        <Text style={[styles.text, styles.wrapper]} variant='headlineSmall'>
-          Share{' '}
-        </Text>
-        <Text style={styles.wrapper} variant='headlineSmall'>
-          your experience
-        </Text>
+        <PaperText variant='title'>Share </PaperText>
+        <PaperText>your experience</PaperText>
       </>
     ),
     description: (
-      <Text style={styles.descriptionText}>
+      <PaperText variant='descriptionText'>
         Create your expert content, engage students, and track progress easily.
-      </Text>
+      </PaperText>
     )
   }
 ]

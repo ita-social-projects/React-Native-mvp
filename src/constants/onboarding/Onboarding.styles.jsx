@@ -14,5 +14,18 @@ export const styles = StyleSheet.create({
   },
   descriptionText: {
     color: colors.grey
+  },
+  headlineSmall: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  headlineMedium: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333'
+  },
+  titleSmall: {
+    fontSize: 16,
+    color: '#444'
   }
 })

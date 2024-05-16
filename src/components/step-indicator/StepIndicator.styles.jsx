@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   stepIndicatorContainer: {
     alignItems: 'center',
-    flexDirection: 'row',
+    flexGrow: 1,
     justifyContent: 'center'
   }
 })

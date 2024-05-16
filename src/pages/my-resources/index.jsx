@@ -1,13 +1,15 @@
 import { View } from 'react-native'
-import { Button, Text } from 'react-native-paper'
+import { Button } from 'react-native-paper'
 import { Link } from 'expo-router'
+
+import { PaperText } from '~/containers'
 
 import { styles } from './MyResources.style'
 
 const MyResources = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>My Resources Page</Text>
+      <PaperText style={styles.text}>My Resources Page</PaperText>
       <Link href='/'>
         <Button
           buttonColor='lightblue'
@@ -15,7 +17,7 @@ const MyResources = () => {
           style={styles.button}
           textColor='#111'
         >
-          <Text>Back</Text>
+          <PaperText>Back</PaperText>
         </Button>
       </Link>
     </View>

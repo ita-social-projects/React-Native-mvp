@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     height: 300,
     margin: 20,
-    marginTop: 40,
+    marginTop: 10,
     width: 300
   },
   image: {
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   textWrapper: {
-    marginVertical: 60
+    marginVertical: 50
   },
   title: {
     color: '#000',
