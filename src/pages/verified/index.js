@@ -34,7 +34,6 @@ const Verified = () => {
           {`We sent a confirmation email to:\n email\n Confirm your email to continue and Log in.`}
         </Text>
       </View>
-      <View style={styles.buttonBox}>
         <Button
           contentStyle={styles.loginContent}
           icon={() => (
@@ -51,8 +50,6 @@ const Verified = () => {
         >
           <Text style={styles.loginText}>Log in</Text>
         </Button>
-        <Text variant='titleSmall'>Send email again</Text>
-      </View>
     </View>
   )
 }
