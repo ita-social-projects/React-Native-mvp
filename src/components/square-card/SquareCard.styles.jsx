@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     height: '60%',
     width: 170,
     padding: 10,
-    backgroundColor: pressed && '#ECEFF1'
+    backgroundColor: pressed ? '#ECEFF1' : '#FFF'
   }),
   imageWrapper: {
     flexDirection: 'column',

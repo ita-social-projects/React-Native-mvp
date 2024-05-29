@@ -1,19 +1,13 @@
 import { View, FlatList } from 'react-native'
 import { TextInput, Text, Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
-import { useState } from 'react'
 
 import { roles } from '~/constants/sign-up'
 import { SquareCard, HeaderWithBackArrow } from '~/components'
 
 import { styles } from './MainConetent.styles'
 
-const MainContent = ({ nextStep, chooseRole }) => {
-  const [pressed, setPressed] = useState({
-    student: false,
-    tutor: false
-  })
-
+const MainContent = ({ nextStep, chooseRole, role }) => {
   const onHandlePress = () => {
     nextStep(true)
   }
@@ -23,12 +17,7 @@ const MainContent = ({ nextStep, chooseRole }) => {
   }
 
   const renderer = (item) => (
-    <SquareCard
-      chooseRole={chooseRole}
-      data={item}
-      pressed={pressed}
-      setPressed={setPressed}
-    />
+    <SquareCard chooseRole={chooseRole} choosenRole={role} data={item} />
   )
 
   return (

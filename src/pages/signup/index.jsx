@@ -28,7 +28,7 @@ const SignUp = () => {
       visible={visible}
     />
   ) : (
-    <MainContent chooseRole={setRole} nextStep={setSecondStep} />
+    <MainContent chooseRole={setRole} nextStep={setSecondStep} role={role} />
   )
 
   return <View style={styles.root(screenHeight)}>{content}</View>

@@ -34,22 +34,22 @@ const Verified = () => {
           {`We sent a confirmation email to:\n email\n Confirm your email to continue and Log in.`}
         </Text>
       </View>
-        <Button
-          contentStyle={styles.loginContent}
-          icon={() => (
-            <AntDesign
-              color='#fff'
-              name='arrowright'
-              size={20}
-              style={styles.icon}
-            />
-          )}
-          mode='contained'
-          onPress={onPress}
-          style={styles.loginButton}
-        >
-          <Text style={styles.loginText}>Log in</Text>
-        </Button>
+      <Button
+        contentStyle={styles.loginContent}
+        icon={() => (
+          <AntDesign
+            color='#fff'
+            name='arrowright'
+            size={20}
+            style={styles.icon}
+          />
+        )}
+        mode='contained'
+        onPress={onPress}
+        style={styles.loginButton}
+      >
+        <Text style={styles.loginText}>Log in</Text>
+      </Button>
     </View>
   )
 }
