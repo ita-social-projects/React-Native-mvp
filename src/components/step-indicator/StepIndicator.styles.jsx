@@ -1,17 +1,12 @@
 import { StyleSheet } from 'react-native'
-
-//TODO create pallete with colors
-const colors = {
-  lightGray: '#cfd8dc',
-  mediumBlue: '#637c85'
-}
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   activeStepIndicator: {
-    backgroundColor: colors.mediumBlue
+    backgroundColor: palette.inversePrimary
   },
   stepIndicator: {
-    backgroundColor: colors.lightGray,
+    backgroundColor: palette.primaryContainer,
     borderRadius: 5,
     height: 10,
     marginHorizontal: 4,

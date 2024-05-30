@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native'
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   subtitle: {
-    color: '#465a64'
+    color: palette.outlineColor
   },
   arrowWrapper: {
     marginRight: 15
@@ -27,13 +28,16 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   inputTheme: {
-    colors: { primary: 'black', underlineColor: 'transparent' }
+    colors: {
+      primary: palette.primary,
+      underlineColor: 'transparent'
+    }
   },
   loginButton: {
-    backgroundColor: '#263238'
+    backgroundColor: palette.surfaceVariant
   },
   loginText: {
-    color: 'white'
+    color: palette.secondary
   },
   mainContent: {
     display: 'flex',

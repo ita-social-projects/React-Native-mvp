@@ -1,12 +1,8 @@
 import { StyleSheet } from 'react-native'
-
-const colors = {
-  darkBlue: '#273239',
-  white: '#fff'
-}
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   signupText: {
-    color: colors.white
+    color: palette.secondary
   }
 })

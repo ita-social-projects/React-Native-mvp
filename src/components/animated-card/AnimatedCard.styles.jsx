@@ -1,10 +1,5 @@
 import { StyleSheet } from 'react-native'
 
-//TODO create pallete with colors
-const colors = {
-  black: '#000'
-}
-
 export const styles = StyleSheet.create({
   imageContainer: {
     alignSelf: 'center',
@@ -24,14 +19,12 @@ export const styles = StyleSheet.create({
     marginVertical: 50
   },
   title: {
-    color: '#000',
     fontSize: 24,
     fontWeight: 'bold',
     marginVertical: 20,
     textAlign: 'center'
   },
   description: {
-    color: colors.black,
     fontSize: 18,
     marginVertical: 10,
     textAlign: 'center'

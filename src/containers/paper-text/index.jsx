@@ -1,7 +1,7 @@
 import { Text } from 'react-native-paper'
 import { StyleSheet } from 'react-native'
 
-import { styles } from '~/constants/onboarding/Onboarding.styles'
+import { styles } from './PaperText.styles'
 
 const PaperText = ({
   children,

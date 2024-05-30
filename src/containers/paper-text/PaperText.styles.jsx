@@ -1,19 +1,15 @@
 import { StyleSheet } from 'react-native'
-
-const colors = {
-  green: '#46995d',
-  grey: '#465a64'
-}
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   wrapper: {
     fontWeight: 'bold'
   },
   text: {
-    color: colors.green
+    color: palette.primaryGreen
   },
   descriptionText: {
-    color: colors.grey
+    color: palette.outlineColor
   },
   headlineSmall: {
     fontSize: 20,
@@ -22,10 +18,10 @@ export const styles = StyleSheet.create({
   headlineMedium: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333'
+    color: palette.tertiaryContainer
   },
   titleSmall: {
     fontSize: 16,
-    color: '#444'
+    color: palette.tertiary
   }
 })
