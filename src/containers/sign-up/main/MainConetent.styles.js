@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   root: (screenHeight) => ({
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 10
   },
   inputTheme: {
-    colors: { primary: 'black', underlineColor: 'transparent' },
+    colors: { primary: palette.primary, underlineColor: 'transparent' },
     mode: 'exact'
   },
   bottomInput: {
@@ -29,24 +30,22 @@ export const styles = StyleSheet.create({
     flexDirection: 'row-reverse'
   },
   buttonText: {
-    color: 'white'
+    color: palette.secondary
   },
   button: {
-    backgroundColor: '#263238'
+    backgroundColor: palette.surfaceVariant
   },
   title: {
-    marginVertical: 10,
-    fontWeight: 'bold'
+    marginVertical: 10
   },
   mainContaner: {
     flex: 1
   },
   subtitle: {
-    color: '#465a64'
+    color: palette.outlineColor
   },
   titleMain: {
-    color: 'rgb(56, 147, 75)',
-    fontWeight: 'bold'
+    color: palette.primaryGreen
   },
   separator: {
     width: 20

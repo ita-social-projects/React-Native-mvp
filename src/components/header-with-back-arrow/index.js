@@ -1,8 +1,8 @@
-import { Text } from 'react-native-paper'
 import { View, Pressable } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import { Link } from 'expo-router'
 
+import { PaperText } from '~/containers'
 import { styles } from './HeaderWithBackArrow.styles'
 
 const HeaderWithBackArrow = ({ route, text, onPress }) => {
@@ -18,7 +18,7 @@ const HeaderWithBackArrow = ({ route, text, onPress }) => {
   return (
     <View style={styles.headerContainer}>
       {interactiveArrow}
-      <Text variant='headlineSmall'>{text}</Text>
+      <PaperText variant='headlineSmall'>{text}</PaperText>
     </View>
   )
 }

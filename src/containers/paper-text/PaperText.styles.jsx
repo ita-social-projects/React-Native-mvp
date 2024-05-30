@@ -12,12 +12,10 @@ export const styles = StyleSheet.create({
     color: palette.outlineColor
   },
   headlineSmall: {
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontSize: 20
   },
   headlineMedium: {
     fontSize: 24,
-    fontWeight: 'bold',
     color: palette.tertiaryContainer
   },
   titleSmall: {

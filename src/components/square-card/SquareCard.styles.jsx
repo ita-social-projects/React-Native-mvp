@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native'
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   roleBox: (pressed) => ({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: 'grey',
+    borderColor: palette.onSurface,
     borderStyle: 'solid',
     borderRadius: 5,
     height: '60%',
     width: 170,
     padding: 10,
-    backgroundColor: pressed ? '#ECEFF1' : '#FFF'
+    backgroundColor: pressed ? palette.hover : palette.secondary
   }),
   imageWrapper: {
     flexDirection: 'column',
@@ -21,8 +22,5 @@ export const styles = StyleSheet.create({
   image: {
     width: 80,
     height: 80
-  },
-  title: {
-    fontWeight: 'bold'
   }
 })

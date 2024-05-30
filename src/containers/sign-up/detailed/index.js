@@ -1,9 +1,11 @@
 import { View } from 'react-native'
-import { TextInput, Text, Button, Checkbox, Divider } from 'react-native-paper'
+import { TextInput, Button, Checkbox, Divider } from 'react-native-paper'
 import { Link, router } from 'expo-router'
 
-import { styles } from './DetailedContent.styles'
 import { HeaderWithBackArrow } from '~/components'
+import { PaperText } from '~/containers'
+
+import { styles } from './DetailedContent.styles'
 
 const DetailedContent = ({ visible, toggle, role, backStep }) => {
   const signUp = () => {
@@ -17,16 +19,16 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
     <>
       <HeaderWithBackArrow onPress={handlePress} route='/' text='Sign up' />
       <View style={styles.mainContaner}>
-        <View>
-          <Text style={styles.title} variant='headlineMedium'>
-            <Text style={styles.titleDetailed}>
+        <View style={styles.textContainer}>
+          <PaperText bold style={styles.title} variant='headlineMedium'>
+            <PaperText bold style={styles.titleDetailed}>
               {role === 'student' ? 'Learn ' : 'Share '}
-            </Text>
+            </PaperText>
             your experience
-          </Text>
-          <Text style={styles.subtitle} variant='titleSmall'>
+          </PaperText>
+          <PaperText style={styles.subtitle} variant='titleSmall'>
             Sign up as tutor and start your teaching journey
-          </Text>
+          </PaperText>
         </View>
         <View style={styles.InputContainer}>
           <TextInput
@@ -63,22 +65,24 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
         </View>
         <View style={styles.termsContainer}>
           <Checkbox status='unchecked' />
-          <Text>I agree to the Terms and Privacy Policy.</Text>
+          <PaperText>I agree to the Terms and Privacy Policy.</PaperText>
         </View>
         <View style={styles.buttonsContainer}>
           <Button mode='contained' onPress={signUp} style={styles.button}>
-            <Text style={styles.buttonText}>Sign up</Text>
+            <PaperText style={styles.buttonText}>Sign up</PaperText>
           </Button>
           <Divider bold />
           <Button mode='contained' style={styles.button}>
-            <Text style={styles.buttonText}>Sign up with Google</Text>
+            <PaperText style={styles.buttonText}>Sign up with Google</PaperText>
           </Button>
         </View>
       </View>
       <View style={styles.logInBox}>
-        <Text style={styles.logInText}>Already have an account?</Text>
+        <PaperText style={styles.logInText}>Already have an account?</PaperText>
         <Link href='/login'>
-          <Text variant='titleSmall'>Log in</Text>
+          <PaperText bold variant='titleSmall'>
+            Log in
+          </PaperText>
         </Link>
       </View>
     </>

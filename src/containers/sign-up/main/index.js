@@ -1,9 +1,11 @@
 import { View, FlatList } from 'react-native'
-import { TextInput, Text, Button } from 'react-native-paper'
+import { TextInput, Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
 
 import { roles } from '~/constants/sign-up'
 import { SquareCard, HeaderWithBackArrow } from '~/components'
+
+import { PaperText } from '~/containers'
 
 import { styles } from './MainConetent.styles'
 
@@ -25,19 +27,19 @@ const MainContent = ({ nextStep, chooseRole, role }) => {
       <HeaderWithBackArrow route='/' text='Sign up' />
       <View style={styles.mainContaner}>
         <View>
-          <Text style={styles.title} variant='headlineMedium'>
+          <PaperText bold style={styles.title} variant='headlineMedium'>
             Introduce{' '}
-            <Text style={styles.titleMain} variant='headlineMedium'>
+            <PaperText bold style={styles.titleMain} variant='headlineMedium'>
               yourself
-            </Text>
-          </Text>
-          <Text style={styles.subtitle} variant='titleSmall'>
+            </PaperText>
+          </PaperText>
+          <PaperText style={styles.subtitle} variant='titleSmall'>
             Please, indroduce yourself be adding your name and aim role on a
             platform
-          </Text>
+          </PaperText>
         </View>
         <View style={styles.InputContainer}>
-          <Text variant='titleSmall'>Enter your name:</Text>
+          <PaperText variant='titleSmall'>Enter your name:</PaperText>
           <TextInput
             label='First name'
             mode='outlined'
@@ -51,7 +53,7 @@ const MainContent = ({ nextStep, chooseRole, role }) => {
           />
         </View>
         <View>
-          <Text variant='titleSmall'>Choose your aim role:</Text>
+          <PaperText variant='titleSmall'>Choose your aim role:</PaperText>
           <FlatList
             ItemSeparatorComponent={Separator}
             contentContainerStyle={styles.rolesContainer}
@@ -76,7 +78,7 @@ const MainContent = ({ nextStep, chooseRole, role }) => {
         onPress={onHandlePress}
         style={styles.button}
       >
-        <Text style={styles.buttonText}>Next</Text>
+        <PaperText style={styles.buttonText}>Next</PaperText>
       </Button>
     </>
   )

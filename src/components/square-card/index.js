@@ -1,6 +1,6 @@
 import { View, Image, Pressable } from 'react-native'
-import { Text } from 'react-native-paper'
 
+import { PaperText } from '~/containers'
 import { styles } from './SquareCard.styles'
 
 const SquareCard = ({ data, chooseRole, choosenRole }) => {
@@ -14,7 +14,7 @@ const SquareCard = ({ data, chooseRole, choosenRole }) => {
       <View style={styles.imageWrapper}>
         <Image source={image} style={styles.image} />
       </View>
-      <Text style={styles.title}>{title}</Text>
+      <PaperText>{title}</PaperText>
     </Pressable>
   )
 }

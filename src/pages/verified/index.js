@@ -1,10 +1,11 @@
 import { View, Image } from 'react-native'
-import { Text, Button } from 'react-native-paper'
+import { Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import { iconInfo } from '~/assets'
+import { PaperText } from '~/containers'
 
 import { styles } from '~/pages/verified/Verified.styles'
 
@@ -27,12 +28,12 @@ const Verified = () => {
         <View style={styles.imageWrapper}>
           <Image source={iconInfo} style={styles.image} />
         </View>
-        <Text style={styles.title} variant='headlineMedium'>
+        <PaperText style={styles.title} variant='headlineMedium'>
           {`Your email address \n needs to be verified`}
-        </Text>
-        <Text style={styles.subtitle} variant='titleSmall'>
+        </PaperText>
+        <PaperText style={styles.subtitle} variant='titleSmall'>
           {`We sent a confirmation email to:\n email\n Confirm your email to continue and Log in.`}
-        </Text>
+        </PaperText>
       </View>
       <Button
         contentStyle={styles.loginContent}
@@ -48,7 +49,7 @@ const Verified = () => {
         onPress={onPress}
         style={styles.loginButton}
       >
-        <Text style={styles.loginText}>Log in</Text>
+        <PaperText style={styles.loginText}>Log in</PaperText>
       </Button>
     </View>
   )

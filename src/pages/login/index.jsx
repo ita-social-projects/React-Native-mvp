@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, router } from 'expo-router'
 import { View, Dimensions } from 'react-native'
-import { TextInput, Text, Button, Divider } from 'react-native-paper'
+import { TextInput, Button, Divider } from 'react-native-paper'
 
 import GradientText from '~/components/gradient-text'
 import { HeaderWithBackArrow } from '~/components'
@@ -54,7 +54,9 @@ const Login = () => {
         </View>
         <View style={styles.forgotPassword}>
           <Link href='/signup'>
-            <PaperText variant='titleSmall'>Forgot your password?</PaperText>
+            <PaperText bold variant='titleSmall'>
+              Forgot your password?
+            </PaperText>
           </Link>
         </View>
         <Button mode='contained' style={styles.loginButton}>
@@ -71,6 +73,7 @@ const Login = () => {
             Don&apos;t have an account?
           </PaperText>
           <PaperText
+            bold
             onPress={() => router.replace('/signup')}
             variant='titleSmall'
           >

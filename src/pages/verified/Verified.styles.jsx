@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   linearGradient: {
@@ -31,14 +32,14 @@ export const styles = StyleSheet.create({
   },
   loginButton: {
     width: '90%',
-    backgroundColor: '#263238',
+    backgroundColor: palette.surfaceVariant,
     marginVertical: 15
   },
   loginContent: {
     flexDirection: 'row-reverse'
   },
   loginText: {
-    color: 'white'
+    color: palette.secondary
   },
   mainContent: {
     flex: 0.7,
@@ -52,8 +53,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   subtitle: {
-    width: 300,
-    color: '#465a64',
+    width: '100%',
+    color: palette.outlineColor,
     textAlign: 'center'
   }
 })
