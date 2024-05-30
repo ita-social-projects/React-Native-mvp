@@ -1,7 +1,9 @@
 import { View } from 'react-native'
-import { Button, Text } from 'react-native-paper'
+import { Button } from 'react-native-paper'
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons'
+
+import { PaperText } from '~/containers'
 
 import { styles } from './ButtonsGeneral.style'
 
@@ -23,12 +25,20 @@ const ButtonsGeneral = () => {
           onPress={() => router.replace('/signup')}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Get Started</Text>
+          <PaperText
+            onPress={() => router.replace('/signup')}
+            style={styles.buttonText}
+          >
+            Get Started
+          </PaperText>
         </Button>
       </View>
-      <Text onPress={() => router.replace('/login')} style={styles.loginText}>
+      <PaperText
+        onPress={() => router.replace('/login')}
+        style={styles.loginText}
+      >
         Log in
-      </Text>
+      </PaperText>
     </>
   )
 }

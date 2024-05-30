@@ -1,16 +1,10 @@
 import { StyleSheet } from 'react-native'
-
-const colors = {
-  darkBlue: '#273239',
-  offWhite: '#fefefe'
-}
-
-//TODO Colors paper try to use theming - https://callstack.github.io/react-native-paper/docs/guides/theming/
+import palette from '~/styles/app-theme/app.pallete'
 
 export const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: colors.darkBlue,
+    backgroundColor: palette.onSurface,
     borderRadius: 50,
     flexDirection: 'row',
     flex: 1,
@@ -21,7 +15,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row-reverse'
   },
   buttonText: {
-    color: colors.offWhite,
+    color: palette.backgroundWhite,
     fontSize: 16,
     fontWeight: '700'
   },
@@ -32,7 +26,7 @@ export const styles = StyleSheet.create({
     marginTop: 20
   },
   loginText: {
-    color: colors.darkBlue,
+    color: palette.onSurface,
     fontSize: 16,
     fontWeight: '700',
     marginTop: 20,

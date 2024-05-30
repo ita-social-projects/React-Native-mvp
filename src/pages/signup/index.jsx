@@ -1,18 +1,23 @@
 import { View } from 'react-native'
-import { Button, Text } from 'react-native-paper'
-import { Link } from 'expo-router'
+import { Button } from 'react-native-paper'
+import { router } from 'expo-router'
+
+import { PaperText } from '~/containers'
 
 import { styles } from './Signup.styles'
 
 const SignUp = () => {
   return (
     <View>
-      <Text>SignUp Screen</Text>
-      <Link asChild href='/'>
-        <Button mode='contained'>
-          <Text style={styles.signupText}>Go to onboarding</Text>
-        </Button>
-      </Link>
+      <PaperText>SignUp Screen</PaperText>
+      <Button mode='contained' onPress={() => router.replace('/')}>
+        <PaperText
+          onPress={() => router.replace('/')}
+          style={styles.signupText}
+        >
+          Go to onboarding
+        </PaperText>
+      </Button>
     </View>
   )
 }

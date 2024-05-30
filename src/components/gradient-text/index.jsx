@@ -1,6 +1,7 @@
-import { Text } from 'react-native-paper'
 import { LinearGradient } from 'expo-linear-gradient'
 import MaskedView from '@react-native-masked-view/masked-view'
+
+import { PaperText } from '~/containers'
 
 import { styles } from './GradientText.styles'
 
@@ -13,9 +14,9 @@ const GradientText = ({
   return (
     <MaskedView
       maskElement={
-        <Text style={[styles.defaultText, style]} variant={variant}>
+        <PaperText style={[styles.defaultText, style]} variant={variant}>
           {text}
-        </Text>
+        </PaperText>
       }
     >
       <LinearGradient
@@ -23,7 +24,7 @@ const GradientText = ({
         end={{ x: 1, y: 1 }}
         start={{ x: 0, y: 0 }}
       >
-        <Text variant={variant}></Text>
+        <PaperText variant={variant}></PaperText>
       </LinearGradient>
     </MaskedView>
   )

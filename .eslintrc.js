@@ -52,7 +52,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
     'react-native/sort-styles': 'off',
-    'react-native/no-color-literals': 'off'
+    'react-native/no-color-literals': 'off',
+    'react-native/no-raw-text': 'off'
   },
   overrides: [
     {
