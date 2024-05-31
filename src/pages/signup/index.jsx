@@ -1,25 +1,37 @@
-import { View } from 'react-native'
-import { Button } from 'react-native-paper'
-import { router } from 'expo-router'
+import { useState } from 'react'
+import { View, Dimensions } from 'react-native'
 
-import { PaperText } from '~/containers'
+import MainContent from '~/containers/sign-up/main'
+import DetailedContent from '~/containers/sign-up/detailed'
 
 import { styles } from './Signup.styles'
 
 const SignUp = () => {
-  return (
-    <View>
-      <PaperText>SignUp Screen</PaperText>
-      <Button mode='contained' onPress={() => router.replace('/')}>
-        <PaperText
-          onPress={() => router.replace('/')}
-          style={styles.signupText}
-        >
-          Go to onboarding
-        </PaperText>
-      </Button>
-    </View>
+  const [role, setRole] = useState('')
+  const [secondStep, setSecondStep] = useState(false)
+  const [visible, setVisible] = useState({
+    password: false,
+    confirmPassword: false
+  })
+
+  const screenHeight = Dimensions.get('window').height
+
+  const toggle = (str) => {
+    setVisible((prev) => ({ ...prev, [str]: !prev[str] }))
+  }
+
+  const content = secondStep ? (
+    <DetailedContent
+      backStep={setSecondStep}
+      role={role}
+      toggle={toggle}
+      visible={visible}
+    />
+  ) : (
+    <MainContent chooseRole={setRole} nextStep={setSecondStep} role={role} />
   )
+
+  return <View style={styles.root(screenHeight)}>{content}</View>
 }
 
 export default SignUp

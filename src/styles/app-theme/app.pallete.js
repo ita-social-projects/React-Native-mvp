@@ -9,7 +9,8 @@ const palette = {
   primaryContainer: '#cfd8dc',
   inversePrimary: '#637c85',
   primaryGreen: '#46995d',
-  outlineColor: '#465a64'
+  outlineColor: '#465a64',
+  hover: '#ECEFF1'
 }
 
 export default palette

@@ -7,13 +7,14 @@ const PaperText = ({
   children,
   style = {},
   variant = '',
+  bold = false,
   onPress = () => {}
 }) => {
   let styleVariant
 
   switch (variant) {
     case 'title':
-      styleVariant = StyleSheet.flatten([styles.wrapper, styles.text, style])
+      styleVariant = StyleSheet.flatten([styles.text, style])
       break
     case 'descriptionText':
       styleVariant = StyleSheet.flatten([styles.descriptionText, style])
@@ -21,39 +22,26 @@ const PaperText = ({
     case 'combineText':
       styleVariant = StyleSheet.flatten([
         styles.descriptionText,
-        styles.wrapper,
         styles.text,
         style
       ])
       break
     case 'headlineSmall':
-      styleVariant = StyleSheet.flatten([
-        styles.wrapper,
-        styles.headlineSmall,
-        style
-      ])
+      styleVariant = StyleSheet.flatten([styles.headlineSmall, style])
       break
     case 'headlineMedium':
-      styleVariant = StyleSheet.flatten([
-        styles.wrapper,
-        styles.headlineMedium,
-        style
-      ])
+      styleVariant = StyleSheet.flatten([styles.headlineMedium, style])
       break
     case 'titleSmall':
-      styleVariant = StyleSheet.flatten([
-        styles.wrapper,
-        styles.titleSmall,
-        style
-      ])
+      styleVariant = StyleSheet.flatten([styles.titleSmall, style])
       break
     default:
-      styleVariant = StyleSheet.flatten([styles.wrapper, style])
+      styleVariant = StyleSheet.flatten([style])
       break
   }
 
   return (
-    <Text onPress={onPress} style={styleVariant}>
+    <Text onPress={onPress} style={[styleVariant, bold && styles.wrapper]}>
       {children}
     </Text>
   )

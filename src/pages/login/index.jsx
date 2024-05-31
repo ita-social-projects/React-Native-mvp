@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Link, router } from 'expo-router'
 import { View, Dimensions } from 'react-native'
 import { TextInput, Button, Divider } from 'react-native-paper'
-import { AntDesign } from '@expo/vector-icons'
 
 import GradientText from '~/components/gradient-text'
+import { HeaderWithBackArrow } from '~/components'
 import { PaperText } from '~/containers'
 
 import { styles } from './Login.styles'
@@ -21,14 +21,7 @@ const Login = () => {
   return (
     <View style={styles.root(screenHeight)}>
       <View style={styles.mainContent}>
-        <View style={styles.headerContainer}>
-          <View style={styles.arrowWrapper}>
-            <Link href='/'>
-              <AntDesign name='arrowleft' size={25} />
-            </Link>
-          </View>
-          <PaperText variant='headlineSmall'>Log in</PaperText>
-        </View>
+        <HeaderWithBackArrow route='/' text='Log in' />
         <View>
           <GradientText
             style={styles.headerStyles}
@@ -44,7 +37,6 @@ const Login = () => {
             keyboardType='email-address'
             label='Email'
             mode='outlined'
-            style={styles.input}
             theme={styles.inputTheme}
           />
           <TextInput
@@ -62,7 +54,9 @@ const Login = () => {
         </View>
         <View style={styles.forgotPassword}>
           <Link href='/signup'>
-            <PaperText variant='titleSmall'>Forgot your password?</PaperText>
+            <PaperText bold variant='titleSmall'>
+              Forgot your password?
+            </PaperText>
           </Link>
         </View>
         <Button mode='contained' style={styles.loginButton}>
@@ -79,6 +73,7 @@ const Login = () => {
             Don&apos;t have an account?
           </PaperText>
           <PaperText
+            bold
             onPress={() => router.replace('/signup')}
             variant='titleSmall'
           >

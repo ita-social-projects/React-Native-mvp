@@ -1,5 +1,5 @@
 import { PaperText } from '~/containers'
-import { screen1, screen2, screen3 } from '~/assets/screens'
+import { screen1, screen2, screen3 } from '~/assets'
 
 export const onboardingSteps = [
   {
@@ -7,10 +7,14 @@ export const onboardingSteps = [
     image: screen1,
     title: (
       <>
-        <PaperText>The secret of getting </PaperText>{' '}
-        <PaperText variant='title'>ahead </PaperText>
-        <PaperText>is getting </PaperText>
-        <PaperText variant='title'>started</PaperText>
+        <PaperText bold>The secret of getting </PaperText>{' '}
+        <PaperText bold variant='title'>
+          ahead{' '}
+        </PaperText>
+        <PaperText bold>is getting </PaperText>
+        <PaperText bold variant='title'>
+          started
+        </PaperText>
       </>
     ),
     description: (
@@ -26,8 +30,10 @@ export const onboardingSteps = [
     image: screen2,
     title: (
       <>
-        <PaperText variant='title'>Learn </PaperText>
-        <PaperText>from experts</PaperText>
+        <PaperText bold variant='title'>
+          Learn{' '}
+        </PaperText>
+        <PaperText bold>from experts</PaperText>
       </>
     ),
     description: (
@@ -42,8 +48,10 @@ export const onboardingSteps = [
     image: screen3,
     title: (
       <>
-        <PaperText variant='title'>Share </PaperText>
-        <PaperText>your experience</PaperText>
+        <PaperText bold variant='title'>
+          Share{' '}
+        </PaperText>
+        <PaperText bold>your experience</PaperText>
       </>
     ),
     description: (
