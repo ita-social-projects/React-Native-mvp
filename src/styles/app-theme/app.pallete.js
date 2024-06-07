@@ -10,7 +10,8 @@ const palette = {
   inversePrimary: '#637c85',
   primaryGreen: '#46995d',
   outlineColor: '#465a64',
-  hover: '#ECEFF1'
+  hover: '#ECEFF1',
+  disabledColor: '#EBEBE4'
 }
 
 export default palette

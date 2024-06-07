@@ -12,10 +12,14 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: palette.secondary
   },
+  buttonCheck: (checked) => ({
+    backgroundColor: checked ? palette.surfaceVariant : palette.disabledColor
+  }),
   termsContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginVertical: 5
   },
   button: {
     backgroundColor: palette.surfaceVariant
@@ -25,9 +29,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 40
   },
+  policyTerms: {
+    color: palette.primary,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline'
+  },
   logInText: {
     marginHorizontal: 10,
-    color: palette.outlineColor
+    color: palette.outlineColor,
+    fontSize: 16
   },
   textContainer: {
     marginVertical: 15
