@@ -2,20 +2,34 @@ import { useState } from 'react'
 import { Link, router } from 'expo-router'
 import { View, Dimensions } from 'react-native'
 import { TextInput, Button, Divider } from 'react-native-paper'
+import { useDispatch } from 'react-redux'
 
 import GradientText from '~/components/gradient-text'
 import { HeaderWithBackArrow } from '~/components'
 import { PaperText } from '~/containers'
 
+import { loginUser } from '~/redux/reducer'
 import { styles } from './Login.styles'
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false)
+  const [data, setData] = useState({
+    email: '',
+    password: ''
+  })
+  const dispatch = useDispatch()
 
   const screenHeight = Dimensions.get('window').height
 
   const toggle = () => {
     setPasswordVisible((prev) => !prev)
+  }
+
+  const handlePress = () => {
+    dispatch(loginUser(data)).unwrap()
+  }
+  const onHandleChange = (text, key) => {
+    setData((prev) => ({ ...prev, [key]: text }))
   }
 
   return (
@@ -37,11 +51,14 @@ const Login = () => {
             keyboardType='email-address'
             label='Email'
             mode='outlined'
+            onChangeText={(text) => onHandleChange(text, 'email')}
             theme={styles.inputTheme}
+            value={data.email}
           />
           <TextInput
             label='Password'
             mode='outlined'
+            onChangeText={(text) => onHandleChange(text, 'password')}
             right={
               <TextInput.Icon
                 icon={passwordVisible ? 'eye-off' : 'eye'}
@@ -50,6 +67,7 @@ const Login = () => {
             }
             secureTextEntry={!passwordVisible}
             theme={styles.inputTheme}
+            value={data.password}
           />
         </View>
         <View style={styles.forgotPassword}>
@@ -59,7 +77,11 @@ const Login = () => {
             </PaperText>
           </Link>
         </View>
-        <Button mode='contained' style={styles.loginButton}>
+        <Button
+          mode='contained'
+          onPress={handlePress}
+          style={styles.loginButton}
+        >
           <PaperText style={styles.loginText}>Log in</PaperText>
         </Button>
         <Divider bold />
