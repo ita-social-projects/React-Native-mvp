@@ -1,13 +1,25 @@
+import { useState } from 'react'
 import { View } from 'react-native'
 import { TextInput, Button, Checkbox, Divider } from 'react-native-paper'
-import { Link, router } from 'expo-router'
+import { router } from 'expo-router'
 
-import { HeaderWithBackArrow } from '~/components'
+import { HeaderWithBackArrow, Url } from '~/components'
 import { PaperText } from '~/containers'
+import {
+  Terms,
+  PrivacyPolicy
+} from '~/containers/sign-up/detailed/DetailedContent.constants'
 
+import palette from '~/styles/app-theme/app.pallete'
 import { styles } from './DetailedContent.styles'
 
 const DetailedContent = ({ visible, toggle, role, backStep }) => {
+  const [checked, setChecked] = useState(false)
+
+  const toggleCheckbox = () => {
+    setChecked(!checked)
+  }
+
   const signUp = () => {
     router.replace('/verified')
   }
@@ -15,6 +27,7 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
   const handlePress = () => {
     backStep((prev) => !prev)
   }
+
   return (
     <>
       <HeaderWithBackArrow onPress={handlePress} route='/' text='Sign up' />
@@ -64,11 +77,23 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
           />
         </View>
         <View style={styles.termsContainer}>
-          <Checkbox status='unchecked' />
-          <PaperText>I agree to the Terms and Privacy Policy.</PaperText>
+          <Checkbox
+            color={palette.surfaceVariant}
+            onPress={toggleCheckbox}
+            status={checked ? 'checked' : 'unchecked'}
+          />
+          <PaperText>
+            I agree to the <Url url={Terms}>Terms</Url> and{' '}
+            <Url url={PrivacyPolicy}>Privacy Policy</Url>.
+          </PaperText>
         </View>
         <View style={styles.buttonsContainer}>
-          <Button mode='contained' onPress={signUp} style={styles.button}>
+          <Button
+            disabled={!checked}
+            mode='contained'
+            onPress={signUp}
+            style={[styles.button, styles.buttonCheck(checked)]}
+          >
             <PaperText style={styles.buttonText}>Sign up</PaperText>
           </Button>
           <Divider bold />
@@ -79,11 +104,14 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
       </View>
       <View style={styles.logInBox}>
         <PaperText style={styles.logInText}>Already have an account?</PaperText>
-        <Link href='/login'>
-          <PaperText bold variant='titleSmall'>
-            Log in
-          </PaperText>
-        </Link>
+        <PaperText
+          bold
+          onPress={() => router.replace('/login')}
+          style={styles.loginText}
+          variant='titleSmall'
+        >
+          Log in
+        </PaperText>
       </View>
     </>
   )
