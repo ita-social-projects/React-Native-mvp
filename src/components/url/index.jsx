@@ -10,7 +10,7 @@ const Url = ({ url, children }) => {
   }, [url])
 
   return (
-    <PaperText onPress={handlePress} style={styles.policyTerms}>
+    <PaperText onPress={handlePress} style={styles.text}>
       {children}
     </PaperText>
   )
