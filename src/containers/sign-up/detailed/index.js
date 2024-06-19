@@ -3,9 +3,8 @@ import { View } from 'react-native'
 import { TextInput, Button, Checkbox, Divider } from 'react-native-paper'
 import { router } from 'expo-router'
 
-import { HeaderWithBackArrow } from '~/components'
+import { HeaderWithBackArrow, Url } from '~/components'
 import { PaperText } from '~/containers'
-import { PrivacyURL } from '~/utils/privacy-url'
 import {
   Terms,
   PrivacyPolicy
@@ -84,8 +83,8 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             status={checked ? 'checked' : 'unchecked'}
           />
           <PaperText>
-            I agree to the <PrivacyURL url={Terms}>Terms</PrivacyURL> and{' '}
-            <PrivacyURL url={PrivacyPolicy}>Privacy Policy</PrivacyURL>.
+            I agree to the <Url url={Terms}>Terms</Url> and{' '}
+            <Url url={PrivacyPolicy}>Privacy Policy</Url>.
           </PaperText>
         </View>
         <View style={styles.buttonsContainer}>

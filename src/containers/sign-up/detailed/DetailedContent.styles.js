@@ -29,11 +29,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 40
   },
-  policyTerms: {
-    color: palette.primary,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline'
-  },
   logInText: {
     marginHorizontal: 10,
     color: palette.outlineColor,

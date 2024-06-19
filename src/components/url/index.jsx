@@ -2,9 +2,9 @@ import { useCallback } from 'react'
 import { Linking } from 'react-native'
 import { PaperText } from '~/containers'
 
-import { styles } from '~/containers/sign-up/detailed/DetailedContent.styles'
+import { styles } from './url.styles'
 
-export const PrivacyURL = ({ url, children }) => {
+const Url = ({ url, children }) => {
   const handlePress = useCallback(() => {
     Linking.openURL(url)
   }, [url])
@@ -15,3 +15,5 @@ export const PrivacyURL = ({ url, children }) => {
     </PaperText>
   )
 }
+
+export default Url
