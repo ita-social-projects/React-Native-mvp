@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import { View } from 'react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { StatusBar } from 'expo-status-bar'
+import { View, SafeAreaView } from 'react-native'
 import { Stack } from 'expo-router'
+import { useState } from 'react'
 
 import {
   GestureDetector,
@@ -11,7 +13,6 @@ import {
 import { StepIndicator, AnimatedCard, ButtonsGeneral } from '~/components'
 
 import { onboardingSteps } from '~/constants/onboarding'
-import Layout from '~/app/layout'
 
 import { styles } from './Onboarding.style'
 
@@ -39,18 +40,21 @@ const OnboardingScreen = () => {
   )
 
   return (
-    <Layout>
-      <Stack.Screen options={{ headerShown: false }} />
-      <GestureDetector gesture={swipes}>
-        <View key={screenIndex} style={styles.pageContent}>
-          <AnimatedCard data={data} />
-          <View style={styles.footer}>
-            <StepIndicator screenIndex={screenIndex} />
-            <ButtonsGeneral />
+    <GestureHandlerRootView style={styles.gestureHandler}>
+      <SafeAreaView style={styles.page}>
+        <StatusBar style='light' />
+        <Stack.Screen options={{ headerShown: false }} />
+        <GestureDetector gesture={swipes}>
+          <View key={screenIndex} style={styles.pageContent}>
+            <AnimatedCard data={data} />
+            <View style={styles.footer}>
+              <StepIndicator screenIndex={screenIndex} />
+              <ButtonsGeneral />
+            </View>
           </View>
-        </View>
-      </GestureDetector>
-    </Layout>
+        </GestureDetector>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   )
 }
 
