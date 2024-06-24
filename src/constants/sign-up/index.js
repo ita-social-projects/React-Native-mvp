@@ -3,13 +3,13 @@ import { iconStudent, iconTutor } from '~/assets'
 export const roles = [
   {
     id: '1',
-    title: 'Become a student',
+    title: 'becomeStudent',
     image: iconStudent,
     role: 'student'
   },
   {
     id: '2',
-    title: 'Become a tutor',
+    title: 'becomeTutor',
     image: iconTutor,
     role: 'tutor'
   }

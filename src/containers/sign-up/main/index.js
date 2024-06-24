@@ -1,6 +1,8 @@
 import { View, FlatList } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
+import '~/plugins/i18n' // temporary solution will be transferred to the layout
+import { useTranslation } from 'react-i18next'
 
 import { roles } from '~/constants/sign-up'
 import { SquareCard, HeaderWithBackArrow } from '~/components'
@@ -10,6 +12,8 @@ import { PaperText } from '~/containers'
 import { styles } from './MainConetent.styles'
 
 const MainContent = ({ nextStep, chooseRole, role }) => {
+  const { t } = useTranslation()
+
   const onHandlePress = () => {
     nextStep(true)
   }
@@ -34,26 +38,27 @@ const MainContent = ({ nextStep, chooseRole, role }) => {
             </PaperText>
           </PaperText>
           <PaperText style={styles.subtitle} variant='titleSmall'>
-            Please, indroduce yourself be adding your name and aim role on a
-            platform
+            {t('signup.description')}
           </PaperText>
         </View>
         <View style={styles.InputContainer}>
-          <PaperText variant='titleSmall'>Enter your name:</PaperText>
+          <PaperText variant='titleSmall'>
+            {t('signup.enterYourName')}
+          </PaperText>
           <TextInput
-            label='First name'
+            label={t('signup.name')}
             mode='outlined'
             theme={styles.inputTheme}
           />
           <TextInput
-            label='Last name'
+            label={t('signup.lastName')}
             mode='outlined'
             style={styles.bottomInput}
             theme={styles.inputTheme}
           />
         </View>
         <View>
-          <PaperText variant='titleSmall'>Choose your aim role:</PaperText>
+          <PaperText variant='titleSmall'>{t('signup.chooseRole')}</PaperText>
           <FlatList
             ItemSeparatorComponent={Separator}
             contentContainerStyle={styles.rolesContainer}
@@ -78,7 +83,7 @@ const MainContent = ({ nextStep, chooseRole, role }) => {
         onPress={onHandlePress}
         style={styles.button}
       >
-        <PaperText style={styles.buttonText}>Next</PaperText>
+        <PaperText style={styles.buttonText}>{t('signup.next')}</PaperText>
       </Button>
     </>
   )

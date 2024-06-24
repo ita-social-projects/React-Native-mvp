@@ -3,6 +3,7 @@ import { Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useTranslation } from 'react-i18next'
 
 import { iconInfo } from '~/assets'
 import { PaperText } from '~/containers'
@@ -10,6 +11,8 @@ import { PaperText } from '~/containers'
 import { styles } from '~/pages/verified/Verified.styles'
 
 const Verified = () => {
+  const { t } = useTranslation()
+
   const onPress = () => {
     router.replace('/login')
   }
@@ -29,10 +32,10 @@ const Verified = () => {
           <Image source={iconInfo} style={styles.image} />
         </View>
         <PaperText style={styles.title} variant='headlineMedium'>
-          {`Your email address \n needs to be verified`}
+          {t('verified.title')}
         </PaperText>
         <PaperText style={styles.subtitle} variant='titleSmall'>
-          {`We sent a confirmation email to:\n email\n Confirm your email to continue and Log in.`}
+          {t('verified.description')}
         </PaperText>
       </View>
       <Button
@@ -49,7 +52,7 @@ const Verified = () => {
         onPress={onPress}
         style={styles.loginButton}
       >
-        <PaperText style={styles.loginText}>Log in</PaperText>
+        <PaperText style={styles.loginText}>{t('verified.login')}</PaperText>
       </Button>
     </View>
   )
