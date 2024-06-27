@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { View } from 'react-native'
 import { TextInput, Button, Checkbox, Divider } from 'react-native-paper'
 import { router } from 'expo-router'
+import '~/plugins/i18n' // temporary solution will be transferred to the layout
+import { useTranslation } from 'react-i18next'
 
 import { HeaderWithBackArrow, Url } from '~/components'
 import { PaperText } from '~/containers'
@@ -15,7 +17,12 @@ import { styles } from './DetailedContent.styles'
 
 const DetailedContent = ({ visible, toggle, role, backStep }) => {
   const [checked, setChecked] = useState(false)
+  const { t } = useTranslation()
 
+  const description =
+    role === 'student'
+      ? 'signup.detailedStudentDescription'
+      : 'signup.detailedTutorDescription'
   const toggleCheckbox = () => {
     setChecked(!checked)
   }
@@ -40,18 +47,18 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             your experience
           </PaperText>
           <PaperText style={styles.subtitle} variant='titleSmall'>
-            Sign up as tutor and start your teaching journey
+            {t(description)}
           </PaperText>
         </View>
         <View style={styles.InputContainer}>
           <TextInput
             keyboardType='email-address'
-            label='Email'
+            label={t('signup.email')}
             mode='outlined'
             theme={styles.inputTheme}
           />
           <TextInput
-            label='Password'
+            label={t('signup.password')}
             mode='outlined'
             right={
               <TextInput.Icon
@@ -64,7 +71,7 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             theme={styles.inputTheme}
           />
           <TextInput
-            label='Confirm password'
+            label={t('signup.confirmPassword')}
             mode='outlined'
             right={
               <TextInput.Icon
@@ -83,8 +90,12 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             status={checked ? 'checked' : 'unchecked'}
           />
           <PaperText>
-            I agree to the <Url url={Terms}>Terms</Url> and{' '}
-            <Url url={PrivacyPolicy}>Privacy Policy</Url>.
+            {t('signup.TermsAndPrivacy.section1')}
+            <Url url={Terms}>{t('signup.TermsAndPrivacy.section2')}</Url>
+            {t('signup.TermsAndPrivacy.section3')}
+            <Url url={PrivacyPolicy}>
+              {t('signup.TermsAndPrivacy.section4')}
+            </Url>
           </PaperText>
         </View>
         <View style={styles.buttonsContainer}>
@@ -94,23 +105,27 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             onPress={signUp}
             style={[styles.button, styles.buttonCheck(checked)]}
           >
-            <PaperText style={styles.buttonText}>Sign up</PaperText>
+            {t('signup.signUp')}
           </Button>
           <Divider bold />
           <Button mode='contained' style={styles.button}>
-            <PaperText style={styles.buttonText}>Sign up with Google</PaperText>
+            <PaperText style={styles.buttonText}>
+              {t('signup.signUpGoogle')}
+            </PaperText>
           </Button>
         </View>
       </View>
       <View style={styles.logInBox}>
-        <PaperText style={styles.logInText}>Already have an account?</PaperText>
+        <PaperText style={styles.logInText}>
+          {t('signup.haveAccount')}
+        </PaperText>
         <PaperText
           bold
           onPress={() => router.replace('/login')}
           style={styles.loginText}
           variant='titleSmall'
         >
-          Log in
+          {t('signup.login')}
         </PaperText>
       </View>
     </>
