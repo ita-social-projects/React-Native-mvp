@@ -1,7 +1,6 @@
 import { View, FlatList } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
-import '~/plugins/i18n' // temporary solution will be transferred to the layout
 import { useTranslation } from 'react-i18next'
 
 import { roles } from '~/constants/sign-up'

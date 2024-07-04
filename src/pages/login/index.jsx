@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, router } from 'expo-router'
 import { View, Dimensions } from 'react-native'
 import { TextInput, Button, Divider } from 'react-native-paper'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import GradientText from '~/components/gradient-text'
 import { HeaderWithBackArrow } from '~/components'
@@ -12,6 +12,7 @@ import { loginUser } from '~/redux/reducer'
 import { styles } from './Login.styles'
 
 const Login = () => {
+  const { userRole } = useSelector((state) => state.appMain)
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [data, setData] = useState({
     email: '',
@@ -20,6 +21,12 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const screenHeight = Dimensions.get('window').height
+
+  useEffect(() => {
+    if (userRole) {
+      router.replace('/(tutor-home)')
+    }
+  }, [userRole])
 
   const toggle = () => {
     setPasswordVisible((prev) => !prev)
@@ -88,7 +95,12 @@ const Login = () => {
       </View>
       <View style={styles.bottomContainer}>
         <Button mode='contained' style={styles.loginButton}>
-          <PaperText style={styles.loginText}>Login Google</PaperText>
+          <PaperText
+            onPress={() => router.replace('/(tutor-home)')}
+            style={styles.loginText}
+          >
+            Login Google
+          </PaperText>
         </Button>
         <View style={styles.signUpBox}>
           <PaperText style={styles.signUpText}>
