@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import { Button } from 'react-native-paper'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 import { PaperText } from '~/containers'
 
@@ -14,10 +14,11 @@ const MyResources = () => {
         <Button
           buttonColor='lightblue'
           mode='contained-tonal'
+          onPress={() => router.replace('/(auth)')}
           style={styles.button}
           textColor='#111'
         >
-          <PaperText>Back</PaperText>
+          Back
         </Button>
       </Link>
     </View>

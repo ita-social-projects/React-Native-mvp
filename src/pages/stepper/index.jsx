@@ -36,7 +36,7 @@ const Stepper = () => {
   }
 
   const onFinalPress = () => {
-    router.replace('/(tutor-home)')
+    router.replace('/(auth)/drawer/tabs')
   }
 
   const content = stepContent[step]
@@ -71,7 +71,7 @@ const Stepper = () => {
     <View style={styles.root}>
       <HeaderWithBackArrow
         onPress={back && onArrowPress}
-        route={'/(tutor-home)'}
+        route={'/(auth)/drawer/tabs'}
         text={headerText}
       />
       <ProgressBar

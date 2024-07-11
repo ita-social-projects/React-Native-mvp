@@ -27,7 +27,7 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
   }
 
   const signUp = () => {
-    router.replace('/verified')
+    router.replace('public/verified')
   }
 
   const handlePress = () => {

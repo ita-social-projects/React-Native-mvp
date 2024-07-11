@@ -24,7 +24,7 @@ const Login = () => {
 
   useEffect(() => {
     if (userRole) {
-      router.replace('/(tutor-home)')
+      router.replace('/(auth)/drawer/tabs/tutor-home')
     }
   }, [userRole])
 
@@ -96,7 +96,7 @@ const Login = () => {
       <View style={styles.bottomContainer}>
         <Button mode='contained' style={styles.loginButton}>
           <PaperText
-            onPress={() => router.replace('/(tutor-home)')}
+            onPress={() => router.replace('/(auth)')}
             style={styles.loginText}
           >
             Login Google

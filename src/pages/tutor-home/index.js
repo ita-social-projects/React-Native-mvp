@@ -1,4 +1,5 @@
 import { View } from 'react-native'
+
 import { PaperText } from '~/containers'
 
 const TutorHome = () => {
