@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { View } from 'react-native'
 import { TextInput, Button, Checkbox, Divider } from 'react-native-paper'
 import { router } from 'expo-router'
-import '~/plugins/i18n' // temporary solution will be transferred to the layout
 import { useTranslation } from 'react-i18next'
 
 import { HeaderWithBackArrow, Url } from '~/components'

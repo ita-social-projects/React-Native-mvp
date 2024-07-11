@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { View } from 'react-native'
 import { Button } from 'react-native-paper'
 import { AntDesign } from '@expo/vector-icons'
 import { ProgressBar } from 'react-native-paper'
+import { router } from 'expo-router'
+import { markFirstLoginComplete } from '~/redux/reducer'
+import { useDispatch } from 'react-redux'
 
 import { HeaderWithBackArrow } from '~/components'
 import { PaperText } from '~/containers'
@@ -16,6 +19,11 @@ const Stepper = () => {
   const [back, setBack] = useState(false)
   const progress = step * 0.25
   const headerText = `Step ${step} of 4`
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(markFirstLoginComplete())
+  }, [dispatch])
 
   const onNext = () => {
     step != 4 && setStep((prev) => prev + 1)
@@ -27,12 +35,17 @@ const Stepper = () => {
     step == 2 && setBack(false)
   }
 
+  const onFinalPress = () => {
+    router.replace('/(tutor-home)')
+  }
+
   const content = stepContent[step]
 
   const showButtons = (step == 4 && (
     <Button
       contentStyle={styles.buttonContent}
       mode='contained'
+      onPress={onFinalPress}
       style={styles.button}
     >
       Finish
@@ -48,7 +61,7 @@ const Stepper = () => {
       >
         Next
       </Button>
-      <Button onPress={onNext}>
+      <Button onPress={onFinalPress}>
         <PaperText bold>Skip</PaperText>
       </Button>
     </>
@@ -58,7 +71,7 @@ const Stepper = () => {
     <View style={styles.root}>
       <HeaderWithBackArrow
         onPress={back && onArrowPress}
-        route={'/'}
+        route={'/(tutor-home)'}
         text={headerText}
       />
       <ProgressBar
