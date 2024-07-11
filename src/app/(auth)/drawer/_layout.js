@@ -1,10 +1,30 @@
 import { Drawer } from 'expo-router/drawer'
 import { MaterialIcons } from '@expo/vector-icons'
-import { router } from 'expo-router'
-
-import { DrawerContent } from '~/components'
 
 import palette from '~/styles/app-theme/app.pallete'
+import { router } from 'expo-router'
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
+import { logout } from '~/redux/reducer'
+import { useDispatch } from 'react-redux'
+
+const DrawerContent = (props) => {
+  const dispatch = useDispatch()
+
+  const onLogout = () => {
+    dispatch(logout())
+    router.push('/')
+  }
+
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItem
+        label='My resorces'
+        onPress={() => router.push('/drawer/tabs/my-resources')}
+      />
+      <DrawerItem label='Log out' onPress={onLogout} />
+    </DrawerContentScrollView>
+  )
+}
 
 export default function Layout() {
   const onPress = () => {
@@ -12,7 +32,6 @@ export default function Layout() {
   }
 
   const style = { marginRight: 10 }
-
   return (
     <Drawer
       drawerContent={(props) => <DrawerContent {...props} />}
