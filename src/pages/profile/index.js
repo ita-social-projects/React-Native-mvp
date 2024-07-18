@@ -3,18 +3,26 @@ import { router } from 'expo-router'
 import { View } from 'react-native'
 
 import { PaperText } from '~/containers'
+import { useDispatch } from 'react-redux'
+import { logout } from '~/redux/reducer'
 
 const Profile = () => {
+  const dispatch = useDispatch()
+
+  const onLogout = () => {
+    dispatch(logout())
+    router.push('/')
+  }
   return (
     <View>
       <PaperText>Profile</PaperText>
       <Button
         buttonColor='lightblue'
         mode='contained-tonal'
-        onPress={() => router.replace('/drawer/tabs/tutor-home')}
+        onPress={onLogout}
         textColor='#111'
       >
-        Back
+        Log out
       </Button>
     </View>
   )

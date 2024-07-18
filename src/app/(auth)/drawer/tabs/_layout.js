@@ -24,7 +24,15 @@ export default function _layout() {
             size={25}
             style={style}
           />
-        )
+        ),
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: 'bold',
+          marginBottom: 10
+        },
+        tabBarStyle: {
+          height: 70
+        }
       }}
     >
       <Tabs.Screen

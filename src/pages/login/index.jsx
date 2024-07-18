@@ -108,7 +108,7 @@ const Login = () => {
           </PaperText>
           <PaperText
             bold
-            onPress={() => router.replace('/signup')}
+            onPress={() => router.replace('public/signup')}
             variant='titleSmall'
           >
             Join us for free!

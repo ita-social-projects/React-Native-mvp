@@ -14,7 +14,7 @@ const Verified = () => {
   const { t } = useTranslation()
 
   const onPress = () => {
-    router.replace('/login')
+    router.replace('public/login')
   }
 
   return (
