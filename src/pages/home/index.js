@@ -2,12 +2,12 @@ import { View } from 'react-native'
 
 import { PaperText } from '~/containers'
 
-const TutorHome = () => {
+const Home = () => {
   return (
     <View>
-      <PaperText>Tutor Home</PaperText>
+      <PaperText>Home</PaperText>
     </View>
   )
 }
 
-export default TutorHome
+export default Home

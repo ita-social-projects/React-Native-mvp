@@ -36,7 +36,7 @@ export default function _layout() {
       }}
     >
       <Tabs.Screen
-        name='tutor-home/index'
+        name='home/index'
         options={{
           tabBarLabel: 'Home',
           headerTitle: 'Home',

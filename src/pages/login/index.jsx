@@ -24,7 +24,7 @@ const Login = () => {
 
   useEffect(() => {
     if (userRole) {
-      router.replace('/(auth)/drawer/tabs/tutor-home')
+      router.replace('/(auth)/drawer/tabs/home')
     }
   }, [userRole])
 
