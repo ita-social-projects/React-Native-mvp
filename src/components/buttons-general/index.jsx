@@ -22,11 +22,11 @@ const ButtonsGeneral = () => {
             />
           )}
           mode='contained'
-          onPress={() => router.replace('/signup')}
+          onPress={() => router.replace('public/signup')}
           style={styles.button}
         >
           <PaperText
-            onPress={() => router.replace('/signup')}
+            onPress={() => router.replace('public/signup')}
             style={styles.buttonText}
           >
             Get Started
@@ -34,7 +34,7 @@ const ButtonsGeneral = () => {
         </Button>
       </View>
       <PaperText
-        onPress={() => router.replace('/login')}
+        onPress={() => router.replace('public/login')}
         style={styles.loginText}
       >
         Log in
