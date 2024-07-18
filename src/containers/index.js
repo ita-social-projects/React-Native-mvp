@@ -1,1 +1,5 @@
 export { default as PaperText } from '~/containers/paper-text'
+export { default as Categories } from '~/containers/my-resources/categories'
+export { default as Lessons } from '~/containers/my-resources/lessons'
+export { default as Quizzes } from '~/containers/my-resources/quizzes'
+export { default as Questions } from '~/containers/my-resources/questions'

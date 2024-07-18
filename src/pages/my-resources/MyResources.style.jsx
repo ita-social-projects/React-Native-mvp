@@ -1,16 +1,21 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-  button: {
-    width: '100%'
+  indicator: {
+    backgroundColor: 'black',
+    width: 60,
+    marginHorizontal: 30
   },
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center'
+  constainer: {
+    backgroundColor: 'white',
+    height: 65,
+    borderBottomColor: 'grey',
+    borderStyle: 'solid',
+    borderBottomWidth: 0.5
   },
-  text: {
-    fontSize: 24,
-    marginBottom: 16
+  tabStyle: {
+    height: 64,
+    width: 120,
+    color: 'black'
   }
 })
