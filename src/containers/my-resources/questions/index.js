@@ -1,5 +1,6 @@
 import { View } from 'react-native'
-import SortAndFilter from '~/components/sort-and-filter'
+
+import SortAndFilter from '~/components/sort-and-filter/index'
 import { PaperText } from '~/containers'
 
 const Questions = () => {
