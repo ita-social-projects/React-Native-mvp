@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { AuthService } from '~/services/auth-service'
 import { parseJwt } from '~/utils/helper-functions'
+import * as SecureStore from 'expo-secure-store'
 
 const initialState = {
   userId: '',
@@ -17,7 +18,7 @@ export const loginUser = createAsyncThunk(
   async (userData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await AuthService.login(userData)
-
+      await SecureStore.setItemAsync('accessToken', data.accessToken)
       dispatch(setUser(data.accessToken))
     } catch (e) {
       const error = e

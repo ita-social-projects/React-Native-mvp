@@ -2,7 +2,10 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useState } from 'react'
 
-import { Categories, Lessons, Questions, Quizzes } from '~/containers'
+import Categories from '~/containers/my-resources/categories'
+import Lessons from '~/containers/my-resources/lessons'
+import Questions from '~/containers/my-resources/questions'
+import Quizzes from '~/containers/my-resources/quizzes'
 
 import { styles } from './MyResources.style'
 

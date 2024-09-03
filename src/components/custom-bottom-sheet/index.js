@@ -1,5 +1,6 @@
 import { forwardRef, useCallback } from 'react'
 import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
+import { Portal } from '@gorhom/portal'
 
 import { styles } from './CustomBottomSheet.styles'
 
@@ -16,16 +17,18 @@ const CustomBottomSheet = ({ snapPoints, content }, ref) => {
   )
 
   return (
-    <BottomSheet
-      backdropComponent={renderBackdrop}
-      enablePanDownToClose='true'
-      handleIndicatorStyle={styles.indicator}
-      index={-1}
-      ref={ref}
-      snapPoints={snapPoints}
-    >
-      {content}
-    </BottomSheet>
+    <Portal>
+      <BottomSheet
+        backdropComponent={renderBackdrop}
+        enablePanDownToClose='true'
+        handleIndicatorStyle={styles.indicator}
+        index={-1}
+        ref={ref}
+        snapPoints={snapPoints}
+      >
+        {content}
+      </BottomSheet>
+    </Portal>
   )
 }
 
