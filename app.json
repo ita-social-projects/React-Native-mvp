@@ -9,7 +9,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "scheme": "your-app-scheme",
     "ios": {
       "supportsTablet": true
@@ -19,6 +21,10 @@
         "backgroundColor": "#ffffff"
       }
     },
-    "plugins": ["expo-router", "expo-localization"]
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      "expo-secure-store"
+    ]
   }
 }

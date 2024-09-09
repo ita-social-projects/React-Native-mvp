@@ -6,3 +6,5 @@ export { default as HeaderWithBackArrow } from '~/components/header-with-back-ar
 export { default as SquareCard } from '~/components/square-card'
 export { default as Url } from '~/components/url'
 export { default as DrawerContent } from '~/components/drawer-content'
+export { default as CustomBottomSheet } from '~/components/custom-bottom-sheet'
+export { default as ResourceCategoriesModal } from '~/components/resource-categories-modal'
