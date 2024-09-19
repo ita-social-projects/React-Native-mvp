@@ -106,11 +106,7 @@ const Login = () => {
           <PaperText style={styles.signUpText}>
             Don&apos;t have an account?
           </PaperText>
-          <PaperText
-            bold
-            onPress={() => router.replace('public/signup')}
-            variant='titleSmall'
-          >
+          <PaperText bold variant='titleSmall'>
             Join us for free!
           </PaperText>
         </View>
