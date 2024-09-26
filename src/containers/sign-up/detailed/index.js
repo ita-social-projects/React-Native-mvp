@@ -74,7 +74,7 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
             mode='outlined'
             right={
               <TextInput.Icon
-                icon={visible.confirmPassword ? 'eye-off' : 'eye'}
+                icon={visible.password ? 'eye-off' : 'eye'}
                 onPress={() => toggle('confirmPassword')}
               />
             }
@@ -106,7 +106,7 @@ const DetailedContent = ({ visible, toggle, role, backStep }) => {
           >
             {t('signup.signUp')}
           </Button>
-          <Divider bold />
+          <Divider />
           <Button mode='contained' style={styles.button}>
             <PaperText style={styles.buttonText}>
               {t('signup.signUpGoogle')}

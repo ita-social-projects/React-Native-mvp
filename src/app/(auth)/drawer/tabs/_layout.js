@@ -14,7 +14,6 @@ export default function _layout() {
   return (
     <Tabs
       screenOptions={{
-        headerTitleAlign: 'center',
         headerLeft: () => <DrawerToggleButton />,
         headerRight: () => (
           <MaterialIcons
@@ -76,15 +75,13 @@ export default function _layout() {
       <Tabs.Screen
         name='profile/index'
         options={{
-          headerTitle: 'Profile',
-          href: null
+          headerTitle: 'Profile'
         }}
       />
       <Tabs.Screen
         name='my-resources/index'
         options={{
-          headerTitle: 'My Resources',
-          href: null
+          headerTitle: 'My Resources'
         }}
       />
     </Tabs>
