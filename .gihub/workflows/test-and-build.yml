@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - develop
 jobs:
   build-android:
     runs-on: ubuntu-latest
