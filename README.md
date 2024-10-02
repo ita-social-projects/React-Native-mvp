@@ -25,14 +25,6 @@ SpaceToStudy React Native project is an Android app where experts in various fie
 - [Contributing](#contributing)
   - [Git flow](#git-flow)
   - [Issue flow](#issue-flow)
-- [Teams](#teams) 
-  - [Development team](#development-team) 
-  - [DevOps team](#devops-team) 
-  - [Designer team](#designer-team) 
-  - [BA team](#ba-team)
-  - [QC team](#qc-team)
-- [FAQ](#faq)
-- [License](#license)
 
 ---
 
