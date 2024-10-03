@@ -13,6 +13,8 @@ import { styles } from './Categories.styles'
 const Categories = () => {
   const [data, setData] = useState({ items: [] })
   const [skip, setSkip] = useState(1)
+  const [resourceDelete, setResourceDelete] = useState(false)
+
   const sort = useMemo(
     () => ({ order: SortEnum.Ascending, orderBy: 'updatedAt' }),
     []
@@ -44,9 +46,16 @@ const Categories = () => {
   })
 
   useEffect(() => {
-    if (response && Array.isArray(response.items)) {
+    if (response && resourceDelete) {
+      setData(() => ({
+        items: [...response.items],
+        count: response.count
+      }))
+      setSkip(1)
+      setResourceDelete(false)
+    } else if (response && Array.isArray(response.items)) {
       setData((prevData) => ({
-        items: [...prevData.items, ...response.items],
+        items: [...prevData.items, ...response.items], //...prevData.items,
         count: response.count
       }))
     }
@@ -60,6 +69,7 @@ const Categories = () => {
   const onDelete = async (id) => {
     await deleteCategory(id)
     fetchData()
+    setResourceDelete(true)
   }
 
   const props = {
