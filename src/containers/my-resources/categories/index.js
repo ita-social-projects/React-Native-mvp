@@ -55,11 +55,11 @@ const Categories = () => {
       setResourceDelete(false)
     } else if (response && Array.isArray(response.items)) {
       setData((prevData) => ({
-        items: [...prevData.items, ...response.items], //...prevData.items,
+        items: [...prevData.items, ...response.items],
         count: response.count
       }))
     }
-  }, [response])
+  }, [response, resourceDelete])
 
   const deleteCategory = useCallback(
     (id) => ResourceService.deleteResourceCategory(id ?? ''),
