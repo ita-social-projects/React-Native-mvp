@@ -26,8 +26,12 @@ const Renderer = ({ item, onDelete, onRename }) => {
   )
 
   const optionsData = [
-    { text: 'Rename', icon: renameIcon, handleSelect: onRename },
-    { text: 'Delete', icon: deleteIcon, handleSelect: onDelete }
+    {
+      text: 'Rename',
+      icon: renameIcon,
+      handleSelect: () => onRename(item._id)
+    },
+    { text: 'Delete', icon: deleteIcon, handleSelect: () => onDelete(item._id) }
   ]
 
   const options = optionsData.map((item) => (

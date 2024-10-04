@@ -52,6 +52,7 @@ const ResourceCategoriesModal = ({
 
     setName('')
     onClose()
+    fetchData()
   }
 
   return (
