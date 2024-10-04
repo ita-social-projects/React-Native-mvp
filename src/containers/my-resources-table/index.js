@@ -100,7 +100,7 @@ const MyResourcesTable = ({
           keyExtractor={(item) => item._id}
           onEndReached={onEndReached}
           onEndReachedThreshold={0}
-          onRefresh={() => fetchData()}
+          onRefresh={fetchData}
           refreshing={refreshing}
           renderItem={({ item }) => (
             <Renderer item={item} onDelete={onDelete} onRename={onRename} />

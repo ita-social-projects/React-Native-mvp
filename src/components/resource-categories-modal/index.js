@@ -40,7 +40,7 @@ const ResourceCategoriesModal = ({
     service: onSaveCategory,
     defaultResponse: null,
     fetchOnMount: false,
-    onResponse: () => fetchData()
+    onResponse: fetchData
   })
 
   const onSaveButtonPressed = async () => {
